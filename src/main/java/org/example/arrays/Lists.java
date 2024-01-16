@@ -10,14 +10,14 @@ public class Lists {
 
     List<Integer> multiplyOddNumbersBy2(List<Integer> numbers) {
         return numbers.stream().map(n -> {
-            if (n % 2 == 1) {
+            if (n % 2 == 1 || n % 2 == -1) {
                 return n * 2;
             }
             return n;
         }).toList();
     }
 
-    List<Integer> createListWith3Numbers(){
-        return List.of(1,2,3);
+    List<Integer> createListWith3Numbers(Integer a,Integer b,Integer c) {
+        return List.of(a, b, c);
     }
 }
