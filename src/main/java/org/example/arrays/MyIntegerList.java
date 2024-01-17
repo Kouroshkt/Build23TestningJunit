@@ -1,6 +1,7 @@
 package org.example.arrays;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Objects;
 
 public class MyIntegerList {
     private final ArrayList<Integer> list;
@@ -35,5 +36,18 @@ public class MyIntegerList {
 
     public void clear() {
         this.list.clear();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MyIntegerList that = (MyIntegerList) o;
+        return Objects.equals(list, that.list);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(list);
     }
 }
